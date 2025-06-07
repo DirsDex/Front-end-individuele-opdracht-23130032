@@ -46,6 +46,8 @@ function displayProducts() {
   });
 
   updatePagination(filtered.length);
+
+
 }
 
 // sorteerfunctie aanroepen
