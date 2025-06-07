@@ -18,11 +18,17 @@ JavaScript
 Alle ontwerpkeuzes zijn toegelicht in docs/ontwerpdocument
 Alle Leerdoelen en reflectie zijn beschreven in docs/logboek.docx
 
+De website bevat drie pagina’s:
+
+- Pagina 1 – Home: introductie van de website
+- Pagina 2 – Overzicht: toont 13 frisdranken met sorteer- en filterfunctionaliteit
+- Pagina 3 – Contact: eenvoudig formulier om contact op te nemen
+
 
 Structuur van het project:
 Individuele opdracht/
 ├── index.html              → Startpagina
-├── overzicht.html          → Verzameling (13 items met sortering/filter/paginering)
+├── overzicht.html          → Verzameling (13 items met sortering/filter/paginanummers)
 ├── contact.html            → Simpele contactpagina
 ├── css/
 │   └── style.css           → Styling van de website
