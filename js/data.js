@@ -1,4 +1,4 @@
-// Array met 13 frisdrankblikjes
+// Array met 13 frisdrankblikjess
 const products = [
   {
     name: "Coca-Cola Original",
