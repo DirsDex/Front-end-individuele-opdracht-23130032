@@ -26,21 +26,23 @@ De website bevat drie pagina’s:
 
 
 Structuur van het project:
-Individuele opdracht/
-├── index.html              → Startpagina
-├── overzicht.html          → Verzameling (13 items met sortering/filter/paginanummers)
-├── contact.html            → Simpele contactpagina
+Individuele-opdracht/
+├── index.html              → Startpagina met introductie en afbeelding
+├── overzicht.html          → Verzameling (13 items met sortering, filtering, paginering)
+├── contact.html            → Contactformulierpagina
 ├── css/
-│   └── style.css           → Styling van de website
+│   └── style.css           → Styling voor responsief design, layout en themakleuren
 ├── js/
-│   ├── data.js             → Array met 13 objecten 
-│   └── app.js              → Logica: sorteren, filteren, paginatie
+│   ├── data.js             → Array met 13 frisdrankobjecten (incl. id’s, naam, suiker, etc.)
+│   ├── app.js              → Logica voor weergave van producten, sorteren/filteren, paginatie
+│   └── menu.js             → Hamburger menu functionaliteit (toon/verberg navigatie)
 ├── images/
-│   └── [13 afbeeldingen]   → Één afbeelding per product
+│   ├── [13 afbeeldingen]   → Eén afbeelding per product
+│   └── footer.jpg          → Bannerafbeelding voor onderaan de pagina
 ├── docs/
 │   ├── ontwerpdocument.docx
 │   └── logboek.docx
-└── README.md               → Dit bestand
+└── README.md               → Dit bestand met projectinformatie
 
 
 
