@@ -1,13 +1,11 @@
-// Aantal items per pagina (vaste waarde = 5 zoals in opdracht)
+
 const itemsPerPage = 5;
 
-// Huidige pagina-index (start op 1)
 let currentPage = 1;
 
 // Actieve filtercategorie (standaard = alles)
 let activeCategory = "all";
 
-// Actieve sorteervolgorde ('asc' of 'desc')
 let sortOrder = null;
 
 // producten weergeven op de pagina
@@ -20,7 +18,7 @@ function displayProducts() {
     ? products
     : products.filter(p => p.category === activeCategory);
 
-  // Sorteren
+
   if (sortOrder === "asc") {
     filtered.sort((a, b) => a.sugar - b.sugar);
   } else if (sortOrder === "desc") {
@@ -36,6 +34,10 @@ function displayProducts() {
   itemsToShow.forEach(item => {
     const card = document.createElement("div");
     card.className = "product-card";
+
+ 
+    card.id = `product-${item.id}`;
+
     card.innerHTML = `
       <img src="${item.image}" alt="${item.name}" width="150" />
       <h3>${item.name}</h3>
@@ -46,20 +48,18 @@ function displayProducts() {
   });
 
   updatePagination(filtered.length);
-
-
 }
 
-// sorteerfunctie aanroepen
+// sorteerfunctie 
 function sortItems(order) {
   sortOrder = order;
   displayProducts();
 }
 
-// filter bij verandering van dropdown
+// filter
 document.getElementById("categoryFilter").addEventListener("change", e => {
   activeCategory = e.target.value;
-  currentPage = 1; // Terug naar eerste pagina
+  currentPage = 1; 
   displayProducts();
 });
 
@@ -82,7 +82,7 @@ function updatePagination(totalItems) {
   }
 }
 
-// Initialiseren bij het laden van de pagina
+
 window.addEventListener("DOMContentLoaded", () => {
   displayProducts();
 });

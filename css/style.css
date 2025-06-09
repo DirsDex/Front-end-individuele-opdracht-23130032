@@ -8,7 +8,7 @@
 /* Basisstijl */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212; 
+  background-color: #121212;
   color: #f1f1f1;
   line-height: 1.6;
   padding: 20px;
@@ -22,10 +22,29 @@ nav {
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
+/* 1. Verberg menu standaard */
 nav ul {
-  display: flex;
-  justify-content: center;
   list-style: none;
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Toon menu als .show is toegevoegd */
+nav ul.show {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+}
+
+/* Desktop: altijd horizontaal tonen */
+@media (min-width: 769px) {
+  nav ul {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    background: none;
+  }
 }
 
 nav li {
@@ -45,28 +64,30 @@ nav a:hover {
   text-decoration: underline;
 }
 
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+  font-size: 28px;
+  color: white;
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  text-align: right;
+  width: 100%;
+}
+
 /* Main content */
 main {
   max-width: 800px;
   margin: 0 auto;
-  background-color: #1e1e1e; /* Donkergrijze achtergrond */
+  background-color: #1e1e1e;
   padding: 20px;
   border-radius: 8px;
-  color: #f1f1f1; /* Lichte tekst voor contrast */
-  box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Optioneel: subtiele schaduw */
+  color: #f1f1f1;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
-/* Responsive*/
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav li {
-    margin: 10px 0;
-  }
-}
 /* Product card layout */
 #product-container {
   display: grid;
@@ -83,6 +104,7 @@ main {
   box-shadow: 0 2px 5px rgba(0,0,0,0.08);
   transition: transform 0.2s ease;
 }
+
 .product-card:hover {
   transform: translateY(-5px);
 }
@@ -102,10 +124,9 @@ main {
   margin: 4px 0;
   font-size: 14px;
   color: #555;
-  
-  
 }
-/* Filter en sorteer knoppen*/
+
+
 #categoryFilter,
 button {
   padding: 8px 14px;
@@ -146,10 +167,11 @@ button:hover,
   font-weight: bold;
 }
 
-/* Extra ruimte tussen secties */
+
 section {
   margin-bottom: 24px;
 }
+
 /* FOOTER Stijl */
 .main-footer {
   background-color: #1e1e1e;
@@ -160,7 +182,7 @@ section {
   margin-top: 3rem;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
   border-top: 4px solid #00bcd4;
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 .main-footer .footer-content p {
@@ -175,15 +197,30 @@ section {
 .main-footer a:hover {
   color: #fff;
 }
-/* responsive */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
 
+/* Banner onderaan */
+.footer-banner {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-banner img {
+  width: 100%;
+  height: auto;
+  max-height: 40vh;
+  object-fit: contain;
+}
+
+/* Extra responsive styles voor kleine schermen */
+@media (max-width: 600px) {
   nav li {
     margin: 10px 0;
+    text-align: center;
   }
 
   main {
@@ -194,29 +231,9 @@ section {
     padding: 10px;
   }
 
-  #categoryFilter, button {
+  #categoryFilter,
+  button {
     width: 100%;
     margin-bottom: 10px;
   }
 }
-.footer-banner {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #111; 
-  margin: 0;
-  padding: 0;
-}
-
-.footer-banner img {
-  width: 100%;
-  height: auto;
-  max-height: 40vh; 
-  object-fit: contain;
-}
-
-
-
-
-
