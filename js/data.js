@@ -1,4 +1,4 @@
-// Array met 13 frisdrankblikjes, elk met een uniek id
+// Array met 13 frisdrankblikjes
 const products = [
   {
     id: 1,
