@@ -11,7 +11,7 @@ let sortOrder = null;
 // producten weergeven op de pagina
 function displayProducts() {
   const container = document.getElementById("product-container");
-  container.innerHTML = ""; // leeg maken voor nieuwe inhoud
+  container.innerHTML = ""; 
 
   // Filter
   let filtered = activeCategory === "all"
