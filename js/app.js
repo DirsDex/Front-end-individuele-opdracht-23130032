@@ -1,43 +1,36 @@
-
+// Basisinstellingen voor paginering en filtering
 const itemsPerPage = 5;
-
 let currentPage = 1;
-
-// Actieve filtercategorie (standaard = alles)
 let activeCategory = "all";
-
 let sortOrder = null;
 
-// producten weergeven op de pagina
+// Laat de juiste producten zien op basis van filter, sorteer en paginering
 function displayProducts() {
   const container = document.getElementById("product-container");
-  container.innerHTML = ""; 
+  container.innerHTML = "";
 
-  // Filter
+  // Filteren op categorie
   let filtered = activeCategory === "all"
     ? products
     : products.filter(p => p.category === activeCategory);
 
-
+  // Sorteren 
   if (sortOrder === "asc") {
     filtered.sort((a, b) => a.sugar - b.sugar);
   } else if (sortOrder === "desc") {
     filtered.sort((a, b) => b.sugar - a.sugar);
   }
 
-  // Paginering
+  // Bepalen welke producten op de huidige pagina horen
   const start = (currentPage - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   const itemsToShow = filtered.slice(start, end);
 
-  // HTML genereren
+  // Productkaarten aanmaken en toevoegen
   itemsToShow.forEach(item => {
     const card = document.createElement("div");
     card.className = "product-card";
-
- 
     card.id = `product-${item.id}`;
-
     card.innerHTML = `
       <img src="${item.image}" alt="${item.name}" width="150" />
       <h3>${item.name}</h3>
@@ -50,20 +43,20 @@ function displayProducts() {
   updatePagination(filtered.length);
 }
 
-// sorteerfunctie 
+// Sorteervolgorde instellen
 function sortItems(order) {
   sortOrder = order;
   displayProducts();
 }
 
-// filter
+// Filter aanpassen bij dropdown-wijziging
 document.getElementById("categoryFilter").addEventListener("change", e => {
   activeCategory = e.target.value;
-  currentPage = 1; 
+  currentPage = 1;
   displayProducts();
 });
 
-// paginering bijwerken
+// Toon knoppen voor paginering
 function updatePagination(totalItems) {
   const pagination = document.getElementById("pagination");
   pagination.innerHTML = "";
@@ -82,7 +75,7 @@ function updatePagination(totalItems) {
   }
 }
 
-
+// Bij het laden van de pagina meteen de producten tonen
 window.addEventListener("DOMContentLoaded", () => {
   displayProducts();
 });
