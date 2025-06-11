@@ -27,7 +27,7 @@ De website bevat drie pagina’s:
 
 Structuur van het project:
 Individuele-opdracht/
-├── index.html              → Startpagina met introductie en afbeelding
+├── home.html              → Startpagina met introductie en afbeelding
 ├── overzicht.html          → Verzameling (13 items met sortering, filtering, paginering)
 ├── contact.html            → Contactformulierpagina
 ├── css/
